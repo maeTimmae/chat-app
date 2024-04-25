@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="wrapper-div">
+        <form onsubmit="saveUserNameToSessionStorage()" action="/dashboard" class="form-input" method="POST">
+            <input id="username"  name="username" type="text" placeholder="Nutzernamen eingeben.." required>
+            <button type="submit">Beitreten</button>
+        </form>
+    </div>
+
+    <script>
+
+        function saveUserNameToSessionStorage(){
+            const nickname = document.querySelector("#username");
+            sessionStorage.setItem("username", nickname.value);
+        }
+    </script>
+</body>
+
+</html>
